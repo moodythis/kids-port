@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة باقة جديدة - مرفأ الأطفال</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🏰 مرفأ الأطفال</h1>
+            <p>إضافة باقة أو خدمة جديدة</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+            <span class="separator">></span>
+            <span>إضافة باقة جديدة</span>
+        </nav>
+
+        <!-- Add Package Form -->
+        <div class="form-container">
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-gift"></i> بيانات الباقة الجديدة</h3>
+            <p>قم بإنشاء باقة أو خدمة جديدة</p>
+        </div>
+        <div class="card-content">
+            <form id="addPackageForm" class="package-form">
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-info-circle"></i>
+                        المعلومات الأساسية
+                    </h4>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="packageName" class="required">اسم الباقة</label>
+                            <input type="text" id="packageName" name="packageName" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="packageType" class="required">نوع الباقة</label>
+                            <select id="packageType" name="packageType" required>
+                                <option value="">اختر نوع الباقة</option>
+                                <option value="time">باقة زمنية</option>
+                                <option value="activity">نشاط محدد</option>
+                                <option value="party">حفلة</option>
+                                <option value="food">طعام ومشروبات</option>
+                                <option value="combo">باقة مختلطة</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="packageDescription" class="required">وصف الباقة</label>
+                        <textarea id="packageDescription" name="packageDescription" rows="3" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Pricing -->
+                <div class="form-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-money-bill"></i>
+                        التسعير والمدة
+                    </h4>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="packagePrice" class="required">السعر (د.ب)</label>
+                            <input type="number" id="packagePrice" name="packagePrice" step="0.001" min="0" required>
+                            <span class="error-message" id="priceError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="packageDuration">المدة (بالدقائق)</label>
+                            <input type="number" id="packageDuration" name="packageDuration" min="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Design -->
+                <div class="form-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-palette"></i>
+                        التصميم والمظهر
+                    </h4>
+                    
+                    <div class="form-group">
+                        <label for="packageColor" class="required">لون الباقة</label>
+                        <div class="color-picker">
+                            <div class="color-options">
+                                <label class="color-option">
+                                    <input type="radio" name="packageColor" value="bg-blue" checked>
+                                    <span class="color-circle bg-blue"></span>
+                                    أزرق
+                                </label>
+                                <label class="color-option">
+                                    <input type="radio" name="packageColor" value="bg-green">
+                                    <span class="color-circle bg-green"></span>
+                                    أخضر
+                                </label>
+                                <label class="color-option">
+                                    <input type="radio" name="packageColor" value="bg-purple">
+                                    <span class="color-circle bg-purple"></span>
+                                    بنفسجي
+                                </label>
+                                <label class="color-option">
+                                    <input type="radio" name="packageColor" value="bg-orange">
+                                    <span class="color-circle bg-orange"></span>
+                                    برتقالي
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Includes -->
+                <div class="form-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-list-check"></i>
+                        ما تشمله الباقة
+                    </h4>
+                    
+                    <div class="includes-list">
+                        <div class="include-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="includes" value="playground">
+                                منطقة الألعاب
+                            </label>
+                        </div>
+                        <div class="include-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="includes" value="trampolines">
+                                الترامبولين
+                            </label>
+                        </div>
+                        <div class="include-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="includes" value="slides">
+                                الزحاليق
+                            </label>
+                        </div>
+                        <div class="include-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="includes" value="ballpit">
+                                حوض الكرات
+                            </label>
+                        </div>
+                        <div class="include-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="includes" value="food">
+                                وجبة طعام
+                            </label>
+                        </div>
+                        <div class="include-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="includes" value="drinks">
+                                مشروبات
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings -->
+                <div class="form-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-cogs"></i>
+                        إعدادات الباقة
+                    </h4>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="packageActive" name="packageActive" checked>
+                            الباقة نشطة ومتاحة للبيع
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="packageFeatured" name="packageFeatured">
+                            باقة مميزة (تظهر في المقدمة)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary btn-large">
+                        <i class="fas fa-save"></i>
+                        حفظ الباقة
+                    </button>
+                    <button type="button" class="btn-secondary btn-large" onclick="resetForm()">
+                        <i class="fas fa-undo"></i>
+                        إعادة تعيين
+                    </button>
+                    <a href="index.html" class="btn-outline btn-large">
+                        <i class="fas fa-arrow-right"></i>
+                        العودة للرئيسية
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Package Preview -->
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-eye"></i> معاينة الباقة</h3>
+        </div>
+        <div class="card-content">
+            <div id="packagePreview" class="package-preview">
+                <div class="preview-card">
+                    <div class="product-color bg-blue" id="previewColor"></div>
+                    <h4 id="previewName">اسم الباقة</h4>
+                    <p id="previewDescription">وصف الباقة</p>
+                    <div class="product-footer">
+                        <span class="product-price" id="previewPrice">0.000 د.ب</span>
+                        <span class="product-duration" id="previewDuration" style="display: none;">
+                            <i class="fas fa-clock"></i>
+                            <span id="previewDurationText">0 دقيقة</span>
+                        </span>
+                    </div>
+                    <div class="preview-includes" id="previewIncludes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>✅ تم الحفظ بنجاح</h2>
+                    <p>تم إضافة الباقة الجديدة بنجاح</p>
+                </div>
+                <div class="modal-body">
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <p>تم إنشاء الباقة وإضافتها إلى قائمة الخدمات</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-primary" onclick="addAnotherPackage()">
+                        <i class="fas fa-plus"></i>
+                        إضافة باقة أخرى
+                    </button>
+                    <a href="index.html" class="btn-secondary">
+                        <i class="fas fa-home"></i>
+                        العودة للرئيسية
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="add-package.js"></script>
+</body>
+</html>

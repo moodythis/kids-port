@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة عميل جديد - مرفأ الأطفال</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🏰 مرفأ الأطفال</h1>
+            <p>إضافة عميل جديد</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+            <span class="separator">></span>
+            <span>إضافة عميل جديد</span>
+        </nav>
+
+        <!-- Add Customer Form -->
+        <div class="form-container">
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-user-plus"></i> بيانات العميل الجديد</h3>
+            <p>يرجى ملء جميع البيانات المطلوبة</p>
+        </div>
+        <div class="card-content">
+            <form id="addCustomerForm" class="customer-form">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-user"></i>
+                        المعلومات الشخصية
+                    </h4>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerName" class="required">الاسم الكامل</label>
+                            <input type="text" id="customerName" name="customerName" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone" class="required">رقم الهاتف</label>
+                            <input type="tel" id="customerPhone" name="customerPhone" required>
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerEmail">البريد الإلكتروني</label>
+                            <input type="email" id="customerEmail" name="customerEmail">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerBirthdate">تاريخ الميلاد</label>
+                            <input type="date" id="customerBirthdate" name="customerBirthdate">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerGender">الجنس</label>
+                            <select id="customerGender" name="customerGender">
+                                <option value="">اختر الجنس</option>
+                                <option value="male">ذكر</option>
+                                <option value="female">أنثى</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerNationality">الجنسية</label>
+                            <select id="customerNationality" name="customerNationality">
+                                <option value="">اختر الجنسية</option>
+                                <option value="bh">بحريني</option>
+                                <option value="sa">سعودي</option>
+                                <option value="ae">إماراتي</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerAddress">العنوان</label>
+                        <textarea id="customerAddress" name="customerAddress" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- Emergency Contact -->
+                <div class="form-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-phone"></i>
+                        جهة الاتصال في حالات الطوارئ
+                    </h4>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emergencyContact">اسم جهة الاتصال</label>
+                            <input type="text" id="emergencyContact" name="emergencyContact">
+                        </div>
+                        <div class="form-group">
+                            <label for="emergencyPhone">رقم هاتف الطوارئ</label>
+                            <input type="tel" id="emergencyPhone" name="emergencyPhone">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="form-section">
+                    <h4 class="section-title">
+                        <i class="fas fa-heart"></i>
+                        التفضيلات
+                    </h4>
+                    
+                    <div class="form-group">
+                        <label for="customerNotes">ملاحظات خاصة</label>
+                        <textarea id="customerNotes" name="customerNotes" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="allowMarketing" name="allowMarketing" checked>
+                            أوافق على تلقي العروض والإشعارات التسويقية
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                            أوافق على شروط وأحكام الخدمة
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary btn-large">
+                        <i class="fas fa-save"></i>
+                        حفظ العميل
+                    </button>
+                    <button type="button" class="btn-secondary btn-large" onclick="resetForm()">
+                        <i class="fas fa-undo"></i>
+                        إعادة تعيين
+                    </button>
+                    <a href="index.html" class="btn-outline btn-large">
+                        <i class="fas fa-arrow-right"></i>
+                        العودة للرئيسية
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Customer Preview -->
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-eye"></i> معاينة بيانات العميل</h3>
+        </div>
+        <div class="card-content">
+            <div id="customerPreview" class="customer-preview">
+                <p class="preview-placeholder">سيتم عرض معاينة البيانات هنا أثناء الكتابة...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>✅ تم الحفظ بنجاح</h2>
+                    <p>تم إضافة العميل الجديد بنجاح</p>
+                </div>
+                <div class="modal-body">
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <p>تم إنشاء حساب العميل وإضافته إلى قاعدة البيانات</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-primary" onclick="addAnotherCustomer()">
+                        <i class="fas fa-plus"></i>
+                        إضافة عميل آخر
+                    </button>
+                    <a href="index.html" class="btn-secondary">
+                        <i class="fas fa-home"></i>
+                        العودة للرئيسية
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="add-customer.js"></script>
+</body>
+</html>
